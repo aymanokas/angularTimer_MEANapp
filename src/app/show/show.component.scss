@@ -1,0 +1,62 @@
+    .content {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        padding: 50px;
+        margin: auto;
+    }
+    
+    .progress-wrapper {
+        position: relative;
+        margin: 20px auto;
+        font-size: 20px;
+    }
+    
+    .progress-wrapper>.text {
+        position: absolute;
+        color: #9B9B9B;
+        font-weight: 100;
+        line-height: 1;
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        font-size: 26px;
+    }
+    
+    round-progress {
+        margin: auto;
+    }
+    
+    .btn-dyali-aqua {
+        border-radius: 10em;
+        background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
+    }
+    
+    .btn-dyali-blue {
+        border-radius: 10em;
+        background: linear-gradient(40deg, #45cafc, #303f9f) !important;
+    }
+    
+    .btn-dyali-purple {
+        border-radius: 10em;
+        background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+    }
+    
+    .blue-grad {
+        color: rgb(69, 202, 252);
+    }
+    
+    .controls-wrapper {
+        text-align: center;
+        margin: auto;
+    }
+    
+    .input {
+        text-align: center;
+        margin: auto;
+        max-width: 250px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    /*Hooomer*/

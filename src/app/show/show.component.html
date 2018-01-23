@@ -1,0 +1,78 @@
+<div class="float-left sticky-top">
+    <br>
+    <a routerLink="/goBackDude"><img class="img-fluid " style="height:80px" src="assets/roblogo.png"></a>
+
+</div>
+<div style="padding:.5rem" class=" text-center">
+    <a routerLink="/home"><button class="btn btn-sm btn-dyali-aqua">Home</button></a>
+    <a routerLink="/show"><button class="btn btn-sm btn-dyali-aqua">Show</button></a>
+    <a routerLink="/jury"><button class="btn btn-sm btn-dyali-aqua">Jury</button></a>
+</div>
+<div class="container">
+    <div class="row">
+        <div style="border-radius:50px" class=" jumbotron col-md-4">
+
+
+            <table class="table table-hover w-auto">
+                <!--Table head-->
+                <thead class="text-center unique-color-dark lighten-3">
+                    <tr>
+                        <th style="font-weight: bold;color:white;">Team</th>
+                        <th style="font-weight: bold;color:white;">Score</th>
+                    </tr>
+                </thead>
+                <!--Table body-->
+                <tbody class="text-center">
+                    <tr *ngFor="let team of teams ">
+                        <td style="font-weight: bold;">
+                            <a (click)="delete(team._id)"><i style="color:red" class="fa fa-close"></i></a> {{team.teamName}}
+                        </td>
+                        <td>
+                            <p style="color:green;font-weight:bold"> Lap 1 :{{team.scoreChrono | number : '1.1-1' }}</p>
+                            <span class="badge badge-danger">{{team.teamScore}}</span>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+                <!--Table body-->
+            </table>
+
+        </div>
+        <div class="col-md-1"></div>
+        <div class=" jumbotron col-md-7">
+
+
+            <h1 class="text-center blue-grad" style="font-size:20px;margin-top:-15px; font-weight:bold;">
+                Competition Local de robotique</h1>
+            <hr>
+            <p class="text-center" style="font-size:20px;">"Robotics Fsr Timer"</p>
+            <div class="progress-wrapper" *ngIf="maxVal">
+                <div class="text" *ngIf="!isFinished">
+                    {{ current | number: '1.1-1' }}
+                </div>
+                <div class="text" *ngIf="isFinished">
+                    Time Up !
+                    <audio src="assets/chime.mp3" autoplay></audio>
+                </div>
+                <round-progress [max]="maxVal" [current]="currentVal" [radius]="100" [stroke]="25">
+                </round-progress>
+            </div>
+            <div class="controls-wrapper">
+                <button class="btn btn-dyali-aqua" *ngIf="currentVal == 0" (click)="start()">Go</button>
+                <button class="btn btn-dyali-purple " *ngIf=" (currentVal != 0 && currentVal < 20)" (click)="getLap()">Stop</button>
+                <button class="btn btn-dyali-blue" *ngIf="isFinished" (click)="reset()">Reset</button>
+                <button class="btn btn-dyali-blue" *ngIf="currentVal == 0 || isFinished" (click)="scoreFetch()">SCORE</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--Table-->

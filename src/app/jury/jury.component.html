@@ -1,0 +1,63 @@
+<div class="float-left sticky-top">
+    <br>
+    <a routerLink="/goBackDude"><img class="img-fluid " style="height:80px" src="assets/roblogo.png"></a>
+
+</div>
+<div style="padding:.5rem" class=" text-center">
+    <a routerLink="/home"><button class="btn btn-sm btn-dyali-aqua">Home</button></a>
+    <a routerLink="/show"><button class="btn btn-sm btn-dyali-aqua">Show</button></a>
+    <a routerLink="/jury"><button class="btn btn-sm btn-dyali-aqua">Jury</button></a>
+</div>
+<div class="container">
+    <div class="jumbotron">
+        <input id="inputTeamName" (keyup.enter)="onEnter()" type="text" placeholder="Team_Name" value="">
+    </div>
+</div>
+<br>
+<div class="container ">
+    <div class="row ">
+        <div class="col-md-12 text-center">
+            <table class="table table-hover  w-auto ">
+                <!--Table head-->
+                <thead class="blue-grey lighten-3 text-center">
+                    <tr>
+                        <th>ID</th>
+                        <th>Team</th>
+                        <th>Members</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <!--Table body-->
+                <tbody class="text-center">
+                    <tr *ngFor="let team of teams">
+                        <th scope="row">{{teams.indexOf(team)}}</th>
+                        <td>
+                            <p style="font-weight:bold">{{team.teamName}}</p>
+                        </td>
+                        <td>name - name - name - name</td>
+                        <td>
+                            <p style="font-weight:bold">
+                                Temporary Score : {{timeBonus}}
+                            </p>
+
+
+                            <button (click)="touched()" class="btn btn-lg btn-danger btn-roun"></button>
+                            <button (click)="notTouched()" class="btn btn-lg btn-success btn-roun"></button>
+                            <button (click)="submitQuery(teams.indexOf(team))" class="btn btn-sm btn-dyali-aqua">Submit Query</button>
+
+
+
+
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+                <!--Table body-->
+            </table>
+            <!--Table-->
+
+        </div>
+    </div>
+</div>
